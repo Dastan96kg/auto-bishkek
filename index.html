@@ -129,30 +129,45 @@
             </div>
         </section>
 
-        <!-- VIN Lead Gen -->
-        <section class="section" style="background: radial-gradient(circle at 50% 100%, rgba(0,85,255,0.05) 0%, transparent 60%);">
-            <div class="container text-center" data-reveal="fade-up">
-                <h2 data-split>Точный подбор по VIN</h2>
-                <p style="max-width: 600px; margin: 0 auto 3rem;">Оставьте данные об автомобиле, и наш специалист подберет 100% подходящую деталь за 10 минут.</p>
-                
-                <form class="lead-form" id="vinForm">
-                    <div class="form-group">
-                        <label class="form-label">Марка и год авто</label>
-                        <input type="text" id="carMark" class="form-control" placeholder="Например: Toyota Camry 2018" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">VIN-код или Номер кузова</label>
-                        <input type="text" id="carVin" class="form-control" placeholder="Например: JTNBK***********" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Какая деталь нужна?</label>
-                        <input type="text" id="carPart" class="form-control" placeholder="Например: Передние тормозные колодки" required>
-                    </div>
-                    <div style="margin-top: 2rem; text-align: center;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Рассчитать стоимость</button>
-                        <p style="margin-top: 1rem; font-size: 0.75rem;">Вы будете перенаправлены в WhatsApp</p>
-                    </div>
-                </form>
+        <!-- VIN Lead Gen with Image -->
+        <section class="section" style="background: var(--surface);">
+            <div class="container grid-2">
+                <div data-reveal="right" style="height: 100%;">
+                    <div style="background: url('img/promo-vin.png') center/cover; border-radius: var(--radius); width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--border);"></div>
+                </div>
+                <div data-reveal="left">
+                    <h2 data-split>Точный подбор по VIN</h2>
+                    <p style="margin-bottom: 2rem;">Оставьте данные об автомобиле, и наш специалист подберет 100% подходящую деталь за 10 минут.</p>
+                    
+                    <form class="lead-form" id="vinForm" style="margin: 0; box-shadow: none;">
+                        <div class="form-group">
+                            <label class="form-label">Марка и год авто</label>
+                            <input type="text" id="carMark" class="form-control" placeholder="Например: Toyota Camry 2018" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">VIN-код или Номер кузова</label>
+                            <input type="text" id="carVin" class="form-control" placeholder="Например: JTNBK***********" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Какая деталь нужна?</label>
+                            <input type="text" id="carPart" class="form-control" placeholder="Например: Передние тормозные колодки" required>
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Рассчитать стоимость</button>
+                            <p style="margin-top: 1rem; font-size: 0.75rem; text-align: center;">Вы будете перенаправлены в WhatsApp</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="grid-2" style="gap: 2rem;">
+                    <img src="img/gallery-1.png" alt="Склад" style="width:100%; height: 400px; object-fit:cover; border-radius:var(--radius); border: 1px solid var(--border);" data-reveal="fade-up">
+                    <img src="img/gallery-2.png" alt="Упаковка" style="width:100%; height: 400px; object-fit:cover; border-radius:var(--radius); border: 1px solid var(--border);" data-reveal="fade-up" data-delay="0.2">
+                </div>
             </div>
         </section>
     </main>
