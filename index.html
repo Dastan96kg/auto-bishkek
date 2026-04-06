@@ -51,6 +51,54 @@
             </div>
         </section>
 
+        <!-- Brands Marquee -->
+        <div class="ticker-wrap" data-reveal="fade-in">
+            <div class="ticker">
+                <div class="ticker-item">Toyota</div>
+                <div class="ticker-item">Lexus</div>
+                <div class="ticker-item">BMW</div>
+                <div class="ticker-item">Mercedes</div>
+                <div class="ticker-item">Bosch</div>
+                <div class="ticker-item">Motul</div>
+                <div class="ticker-item">KYB</div>
+                <div class="ticker-item">Denso</div>
+                <!-- Duplicate for infinite scroll -->
+                <div class="ticker-item">Toyota</div>
+                <div class="ticker-item">Lexus</div>
+                <div class="ticker-item">BMW</div>
+                <div class="ticker-item">Mercedes</div>
+                <div class="ticker-item">Bosch</div>
+                <div class="ticker-item">Motul</div>
+                <div class="ticker-item">KYB</div>
+                <div class="ticker-item">Denso</div>
+            </div>
+        </div>
+
+        <!-- How we work -->
+        <section class="section">
+            <div class="container text-center" data-reveal="fade-up">
+                <h2 data-split>Как мы работаем</h2>
+                <p style="max-width: 600px; margin: 0 auto 4rem;">От заявки до получения нужной детали — всего 3 простых шага.</p>
+            </div>
+            <div class="container grid-3">
+                <div class="step-item" data-reveal="fade-up">
+                    <div class="step-number">1</div>
+                    <h3 style="margin-bottom:1rem; font-size:1.25rem;">Запрос по VIN</h3>
+                    <p style="font-size:0.875rem;">Вы отправляете нам данные автомобиля. Мы пробиваем их по оригинальным европейским и японским каталогам.</p>
+                </div>
+                <div class="step-item" data-reveal="fade-up" data-delay="0.1">
+                    <div class="step-number">2</div>
+                    <h3 style="margin-bottom:1rem; font-size:1.25rem;">Выбор вариантов</h3>
+                    <p style="font-size:0.875rem;">Предлагаем 3-4 цены на выбор: от оригинальной детали (OEM) до проверенных сертифицированных аналогов.</p>
+                </div>
+                <div class="step-item" data-reveal="fade-up" data-delay="0.2">
+                    <div class="step-number">3</div>
+                    <h3 style="margin-bottom:1rem; font-size:1.25rem;">Доставка</h3>
+                    <p style="font-size:0.875rem;">Курьер привозит деталь прямо в автосервис или к вам домой в течение 60 минут после подтверждения.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="section" style="background: var(--surface);">
             <div class="container text-center" data-reveal="fade-up">
                 <h2>Мы меняем <span style="color:var(--primary);">правила игры</span>.</h2>
@@ -78,6 +126,33 @@
                     <h3>Доставка за 60 минут</h3>
                     <p>Свой парк курьеров. Привезем в руки мастеру.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- VIN Lead Gen -->
+        <section class="section" style="background: radial-gradient(circle at 50% 100%, rgba(0,85,255,0.05) 0%, transparent 60%);">
+            <div class="container text-center" data-reveal="fade-up">
+                <h2 data-split>Точный подбор по VIN</h2>
+                <p style="max-width: 600px; margin: 0 auto 3rem;">Оставьте данные об автомобиле, и наш специалист подберет 100% подходящую деталь за 10 минут.</p>
+                
+                <form class="lead-form" id="vinForm">
+                    <div class="form-group">
+                        <label class="form-label">Марка и год авто</label>
+                        <input type="text" id="carMark" class="form-control" placeholder="Например: Toyota Camry 2018" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">VIN-код или Номер кузова</label>
+                        <input type="text" id="carVin" class="form-control" placeholder="Например: JTNBK***********" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Какая деталь нужна?</label>
+                        <input type="text" id="carPart" class="form-control" placeholder="Например: Передние тормозные колодки" required>
+                    </div>
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Рассчитать стоимость</button>
+                        <p style="margin-top: 1rem; font-size: 0.75rem;">Вы будете перенаправлены в WhatsApp</p>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

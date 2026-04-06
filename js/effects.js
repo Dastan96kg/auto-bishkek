@@ -60,4 +60,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (!isActive) item.classList.add('active');
         });
     });
+
+    // Form Submit (WhatsApp redirect)
+    const vinForm = document.getElementById("vinForm");
+    if (vinForm) {
+        vinForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const mark = document.getElementById("carMark").value;
+            const vin = document.getElementById("carVin").value;
+            const part = document.getElementById("carPart").value;
+            
+            const message = `Здравствуйте! Мне нужна запчасть.%0A*Авто:* ${mark}%0A*VIN / Кузов:* ${vin}%0A*Деталь:* ${part}%0A%0AПрошу рассчитать стоимость и варианты.`;
+            const phone = "996555123456";
+            
+            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+        });
+    }
 });
