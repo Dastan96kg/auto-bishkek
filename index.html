@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>GARAGEX | Автозапчасти в Бишкеке — Оригиналы и Аналоги</title>
+    <meta name="title" content="GARAGEX | Автозапчасти в Бишкеке — Оригиналы и Аналоги">
+    <meta name="description" content="Огромный склад запчастей для иномарок в Бишкеке. Найдём то, что другие предлагают ждать месяц. Быстрый подбор, доставка по городу.">
+
+    <!-- Fonts: Unbounded & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Unbounded:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Branding Colors */
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-hover: #1f1f1f;
+            --primary: #ff5000;
+            --primary-hover: #e64800;
+            --text: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border: rgba(255, 255, 255, 0.08);
+            
+            /* Sizing & Borders */
+            --radius-sm: 0.75rem;
+            --radius-lg: 1.5rem;
+            
+            /* Typography */
+            --font-head: 'Unbounded', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+            
+            /* Animations */
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: var(--radius-sm); }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        /* Typography Styles */
+        h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1.1; margin-bottom: 0.5em; }
+        h1 { font-size: clamp(2.5rem, 6vw, 5.5rem); letter-spacing: -0.03em; margin-bottom: 1.5rem; text-transform: uppercase; }
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 2rem; letter-spacing: -0.02em; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .text-accent { color: var(--primary); }
+        p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1em; }
+
+        /* Buttons Component */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.125rem 2.5rem;
+            border-radius: 100px;
+            font-family: var(--font-head);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            gap: 0.75rem;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(255, 80, 0, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 80, 0, 0.35);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255, 0.03);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover {
+            background: var(--surface-hover);
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255, 0.2);
+        }
+
+        /* Navigation Header */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.25rem 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+        .nav-links a:hover { color: var(--text); }
+        .nav-contacts { display: flex; align-items: center; gap: 1.5rem; }
+        .phone-link { font-family: var(--font-head); font-weight: 600; font-size: 1.125rem; }
+
+        /* Main Section Utility */
+        section { padding: 9rem 0; position: relative; }
+        
+        /* Layout Grids */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
+        @media(max-width: 1024px) {
+            .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            transition: var(--transition);
+            height: 100%;
+        }
+        .card:hover {
+            border-color: rgba(255, 80, 0, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0, 0.5);
+        }
+        .icon-box {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 80, 0, 0.1);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .icon-box svg { width: 2rem; height: 2rem; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 7rem;
+            background: radial-gradient(circle at 100% 0%, rgba(255,80,0,0.15) 0%, transparent 50%);
+        }
+        .hero-img {
+            border-radius: var(--radius-lg);
+            height: 75vh;
+            object-fit: cover;
+            width: 100%;
+            border: 1px solid var(--border);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+        .stat-item h4 { font-size: 2.5rem; color: var(--text); margin-bottom: 0.25rem; font-weight: 900; }
+        .stat-item p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+
+        /* Pains Section */
+        .pain-list { counter-reset: pain-counter; display: flex; flex-direction: column; gap: 1.5rem; }
+        .pain-item {
+            display: flex;
+            gap: 2rem;
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .pain-item p { margin: 0; }
+        .pain-item:hover { border-color: rgba(255,255,255,0.2); }
+        .pain-item::before {
+            counter-increment: pain-counter;
+            content: "0" counter(pain-counter);
+            font-family: var(--font-head);
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.03);
+            position: absolute;
+            right: -1rem;
+            bottom: -2.5rem;
+            line-height: 1;
+            transition: var(--transition);
+        }
+        .pain-item:hover::before { color: rgba(255,80,0,0.05); }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            cursor: pointer;
+        }
+        .faq-item:first-child { border-top: 1px solid var(--border); }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            color: var(--text-muted);
+            opacity: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            margin-top: 1.5rem;
+            opacity: 1;
+        }
+        .faq-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .footer-col h4 { margin-bottom: 1.5rem; font-size: 1.125rem; color: #fff;}
+        .footer-links { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-links a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Mobile CTA Wrapper */
+        .mobile-cta { display: none; }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-img { height: 50vh; margin-top: 2rem; }
+            section { padding: 6rem 0; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-btn { display: none; }
+            h1 { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; }
+            h2 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+            .hero-stats { flex-direction: column; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            
+            .mobile-cta {
+                display: flex;
+                position: fixed;
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+                background: var(--primary);
+                color: #fff;
+                padding: 1.25rem;
+                border-radius: var(--radius-sm);
+                justify-content: center;
+                align-items: center;
+                gap: 0.75rem;
+                font-family: var(--font-head);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                z-index: 99;
+                box-shadow: 0 10px 30px rgba(255, 80, 0, 0.3);
+            }
+            body { padding-bottom: 5rem; }
+            nav { padding: 1rem 0; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">GARAGE<span>X</span></a>
+            <div class="nav-links">
+                <a href="#benefits">Преимущества</a>
+                <a href="#catalog">Каталог</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="nav-contacts">
+                <a href="tel:+996555123456" class="phone-link">+996 (555) 123-456</a>
+                <a href="#cta" class="btn btn-secondary nav-btn" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Оставить заявку</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container grid-2">
+            <div class="hero-content reveal">
+                <h1>Детали, которые решают. <span class="text-accent">В наличии.</span></h1>
+                <p style="font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 500px; color: var(--text);">Огромный склад запчастей для иномарок в Бишкеке.<br>Найдём то, что другие предлагают ждать месяц. Без ошибок в подборе.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#cta" class="btn btn-primary">Подобрать деталь</a>
+                    <a href="tel:+996555123456" class="btn btn-secondary">Позвонить сейчас</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>50k+</h4>
+                        <p>Позиций на складе</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>60 мин</h4>
+                        <p>Доставка по Бишкеку</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>Точность по VIN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal delay-1">
+                <!-- Cinematic Automotive Photo -->
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2000&auto=format&fit=crop" alt="Склад автозапчастей" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section id="pains" style="background: var(--surface);">
+        <div class="container grid-2">
+            <div class="reveal">
+                <h2>Мы знаем, как <span class="text-accent">бесит</span> ждать запчасти.</h2>
+                <p style="margin-bottom: 2.5rem;">Рынок автозапчастей застрял в прошлом. Вы звоните в десятки контейнеров, ездите по городу и в итоге получаете не ту деталь.</p>
+                <img src="https://images.unsplash.com/photo-1530046339160-ceed3ccb0f80?q=80&w=1000&auto=format&fit=crop" alt="Уставший автомеханик" style="border-radius: var(--radius-lg); height: 420px; object-fit: cover; width: 100%; border: 1px solid var(--border);">
+            </div>
+            <div class="pain-list reveal delay-1">
+                <div class="pain-item">
+                    <div>
+                        <h3>Машина на подъёмнике</h3>
+                        <p>Мастер ждет, время идет, а нужной детали нигде нет в наличии.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div>
+                        <h3>Привезли, но не то</h3>
+                        <p>Ошиблись на одну букву в артикуле — потеряно время и деньги на возврат.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div>
+                        <h3>Китайский «оригинал»</h3>
+                        <p>Ремкомплект рассыпался через месяц агрессивной езды. Плати за ремонт дважды.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Benefits -->
+    <section id="benefits">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;" class="reveal">
+                <h2>Мы меняем <span class="text-accent">правила игры</span>.</h2>
+                <p>GARAGEX — это цифровой подход к снабжению. Закажите прямо из автосервиса.</p>
+            </div>
+            
+            <div class="grid-4">
+                <div class="card reveal">
+                    <div class="icon-box">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3>Наличие здесь и сейчас</h3>
+                    <p>Никаких «подождите 2 недели из Дубая». Более 50 000 наименований уже лежат на полках нашего склада в Бишкеке.</p>
+                </div>
+                <div class="card reveal delay-1">
+                    <div class="icon-box">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Фирменный подбор по VIN</h3>
+                    <p>Используем дилерские каталоги. Гарантируем 100% совместимость. Если деталь не подойдёт по нашей вине — заменим за свой счёт.</p>
+                </div>
+                <div class="card reveal delay-2">
+                    <div class="icon-box">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Доставка за 60 минут</h3>
+                    <p>Собственный парк курьеров. Привезём деталь прямо в руки мастеру в ваш автосервис.</p>
+                </div>
+                <div class="card reveal delay-3">
+                    <div class="icon-box">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h3>Безусловная гарантия</h3>
+                    <p>От 6 месяцев до 2 лет на запчасти установленные в СТО. Без лишних бумажек.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog -->
+    <section id="catalog" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <h2 class="reveal" style="text-align: center; margin-bottom: 4rem;">Каталог <span class="text-accent">продукции</span></h2>
+            <div class="grid-3">
+                <div class="card reveal" style="padding: 0; overflow: hidden; background: var(--bg);">
+                    <img src="https://images.unsplash.com/photo-1620050860541-118df2df380a?q=80&w=800&auto=format&fit=crop" style="height: 260px; width: 100%; object-fit: cover; border-radius: 0;" alt="Оригиналы OEM">
+                    <div style="padding: 2.5rem;">
+                        <h3>Оригинальные запчасти (OEM)</h3>
+                        <p style="margin:0;">Детали с тем же клеймом, что и на конвейере. Идеально для ремонта важных агрегатов двигателя и ходовой.</p>
+                    </div>
+                </div>
+                <div class="card reveal delay-1" style="padding: 0; overflow: hidden; background: var(--bg);">
+                    <img src="https://images.unsplash.com/photo-1542318789-53e34f66453f?q=80&w=800&auto=format&fit=crop" style="height: 260px; width: 100%; object-fit: cover; border-radius: 0;" alt="Контрактные детали">
+                    <div style="padding: 2.5rem;">
+                        <h3>Сертифицированные аналоги</h3>
+                        <p style="margin:0;">Bosch, Denso, KYB, Lemförder. Качество завода без переплаты за бренд автозавода.</p>
+                    </div>
+                </div>
+                <div class="card reveal delay-2" style="padding: 0; overflow: hidden; background: var(--bg);">
+                    <img src="https://images.unsplash.com/photo-1620022201990-28ddc4dc60ad?q=80&w=800&auto=format&fit=crop" style="height: 260px; width: 100%; object-fit: cover; border-radius: 0;" alt="Расходники ТО">
+                    <div style="padding: 2.5rem;">
+                        <h3>Расходники для ТО</h3>
+                        <p style="margin:0;">Премиальные моторные масла, фильтры, тормозные колодки, свечи. Весь регламент в сборе.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section id="reviews">
+        <div class="container grid-2">
+            <div class="reveal">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height:1.2;">Нам доверяют свои <span class="text-accent">автомобили</span></h2>
+                <div class="card" style="margin-bottom: 2rem; background: rgba(255,255,255,0.02);">
+                    <p style="color: var(--text); font-size: 1.125rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Искал редкий датчик VVTI на Subaru. Везде по Кудайбергену говорили ждать 3 недели из Эмиратов. У ребят он лежал на складе. Уровень сервиса — Космос."</p>
+                    <div style="display: flex; align-items: center; gap: 1.25rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: bold; font-size: 1.25rem;">А</div>
+                        <div>
+                            <h4 style="font-family: var(--font-body); font-weight: 700; margin-bottom: 0.25rem;">Азамат О.</h4>
+                            <p style="font-size: 0.875rem; margin:0;">Subaru Outback 2.5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: rgba(255,255,255,0.02);">
+                    <p style="color: var(--text); font-size: 1.125rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">"Владеем собственной СТО. Теперь базу деталей берем здесь. Цены как у крупных поставщиков, а доставка в течение часа. Очень удобные ребята."</p>
+                    <div style="display: flex; align-items: center; gap: 1.25rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; background: var(--surface-hover); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); border: 1px solid var(--border); font-size: 1.25rem;">М</div>
+                        <div>
+                            <h4 style="font-family: var(--font-body); font-weight: 700; margin-bottom: 0.25rem;">Марат</h4>
+                            <p style="font-size: 0.875rem; margin:0;">Директор СТО «АвтоРитм»</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal delay-1" style="position: relative; height: 100%;">
+                <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1200&auto=format&fit=crop" style="border-radius: var(--radius-lg); width: 100%; height: 100%; min-height: 600px; object-fit: cover;" alt="Satisfied Customer">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background: var(--primary); color: #fff; text-align: center; border-radius: var(--radius-lg); margin: 0 3%; padding: 7rem 5%;">
+        <div class="container reveal">
+            <h2 style="color: #fff; margin-bottom: 1.5rem;">Ваш надёжный партнёр на дороге</h2>
+            <p style="color: rgba(255,255,255,0.95); font-size: 1.35rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">GARAGEX — это команда гиков. Мы понимаем, что автомобиль — это не просто железка, а ваша свобода. Поэтому мы пропускаем через себя каждый заказ, словно выбираем деталь для своей собственной машины.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal">
+                    <h2>Частые <span class="text-accent">вопросы</span></h2>
+                    <p style="font-size: 1.125rem;">Есть сомнения? Отвечаем прямо и без утайки.</p>
+                </div>
+                
+                <div class="reveal delay-1">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>Как узнать наличие моей детали?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <div class="faq-answer">
+                            Напишите нам в WhatsApp и скиньте VIN-код авто. Наш менеджер проверит актуальную базу склада по дилерским программам и ответит за 10 минут. Вы сразу получите цены за оригинал и аналоги.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Вы отправляете запчасти в регионы?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <div class="faq-answer">
+                            Да, мы отправляем товары во все регионы Кыргызстана. Работаем с курьерскими службами и передаем через маршрутки. Отгрузка со склада в день заказа.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Что делать, если запчасть не подошла?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <div class="faq-answer">
+                            Мы гарантируем 정확ность подбора. Если произошла ошибка по нашей вине — мы сделаем бесплатный возврат и замену день в день. Главное: сохранить товарный вид и упаковку без следов установки (масла, смазки).
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Есть ли у вас прайс для СТО и оптовиков?</span>
+                            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <div class="faq-answer">
+                            Конечно. Для автосервисов, механиков и оптовых покупателей у нас действуют специальные цены (ОПТ), кредитный лимит и приоритетная доставка. Позвоните нам, мы выделим вам персонального менеджера.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" style="background: radial-gradient(circle at 50% 50%, rgba(255,80,0,0.1) 0%, transparent 70%); border-top: 1px solid var(--border);">
+        <div class="container text-center reveal">
+            <h2 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem;">Готовы вернуть авто <span class="text-accent">в строй?</span></h2>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem;">Отправьте VIN-код или запрос, и мы подготовим смету с вариантами за 10 минут. Расчет бесплатный.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:info@garage-x.kg?subject=Заявка на подбор запчастей" class="btn btn-primary" style="padding: 1.5rem 3.5rem; font-size: 1.125rem;">Оставить заявку</a>
+                <a href="tel:+996555123456" class="btn btn-secondary" style="padding: 1.5rem 3.5rem; font-size: 1.125rem;">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.5rem; height: 1.5rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    Позвонить нам
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 2rem; display: inline-block;">GARAGE<span>X</span></a>
+                    <p style="margin-bottom: 2.5rem; font-size: 1rem;">Премиальный сервис подбора автозапчастей в Бишкеке.<br>Только качественные детали, без сюрпризов.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <!-- Social Icons -->
+                        <a href="#" style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--primary)'; this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text)'">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://wa.me/996555123456" style="width: 3rem; height: 3rem; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); transition: var(--transition);" onmouseover="this.style.borderColor='var(--primary)'; this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text)'">
+                            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <div class="footer-links">
+                        <a href="#benefits">Преимущества и гарантии</a>
+                        <a href="#catalog">Каталог запчастей</a>
+                        <a href="#reviews">Отзывы клиентов</a>
+                        <a href="#about">О нашей команде</a>
+                        <a href="#faq">Вопросы и ответы</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <div class="footer-links" style="gap: 1.25rem;">
+                        <a href="tel:+996555123456" style="color: var(--text); font-family: var(--font-head); font-weight: 600; font-size: 1.125rem;">+996 (555) 123-456</a>
+                        <a href="mailto:info@garagex.kg" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            info@garagex.kg
+                        </a>
+                        <div style="line-height: 1.5;">
+                            <b>г. Бишкек</b>, ул. Льва Толстого, 19<br>
+                            <span style="font-size: 0.875rem; color: var(--text-muted);">Без выходных: 09:00 - 20:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 GARAGEX. Все права защищены.</div>
+                <div>Дизайн и сборка: <b>Конвейер Сайтов 3.0</b></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <a href="https://wa.me/996555123456" class="mobile-cta">
+        <svg fill="currentColor" viewBox="0 0 24 24" style="width: 1.5rem; height: 1.5rem;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+        Написать в WhatsApp
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Animate elements on scroll
+        const observeElements = (selector) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            document.querySelectorAll(selector).forEach(el => observer.observe(el));
+        };
+
+        observeElements('.reveal');
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
