@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         requestAnimationFrame(raf);
     }
 
-    // GSAP Animations (Конвейер сайтов 3.0 Standard)
+    // GSAP Animations
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
         
@@ -23,8 +23,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (effect === "scale") { config.scale = 0.9; }
             if (effect === "left") { config.x = -50; }
             if (effect === "right") { config.x = 50; }
+            if (delay) { config.delay = parseFloat(delay); }
             
             gsap.from(el, config);
+        });
+    }
+
+    // SplitType Typography Animations (Конвейер 3.0 Signature Effect)
+    if (typeof SplitType !== 'undefined' && typeof gsap !== 'undefined') {
+        const splitTextEls = document.querySelectorAll('[data-split]');
+        splitTextEls.forEach((el) => {
+            // Apply SplitType to break text into characters/words
+            const split = new SplitType(el, { types: 'chars, words' });
+            
+            // GSAP Stagger animation for characters
+            gsap.from(split.chars, {
+                opacity: 0,
+                y: 30,
+                rotateX: -40,
+                duration: 1,
+                ease: 'power3.out',
+                stagger: 0.03,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%"
+                }
+            });
         });
     }
 
